@@ -5,22 +5,22 @@ public class Q40 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     String menu = "1) codificar\n2) decodificar?\n3) Sair\nO que você deseja fazer? ";
-    System.out.print(menu);
-    int op = sc.nextInt();
-    sc.nextLine();
+    int op = 0;
 
     do {
+      System.out.print(menu);
+      op = sc.nextInt();
+      sc.nextLine();
+
       if (op == 1) {
         codificar();
       } else if (op == 2) {
         decodificar();
+      } else if (op == 3) {
+        System.out.println("Saindo...");
       } else {
-        System.out.println("Opção inválida!");
+        System.out.println("Opção inválida.");
       }
-
-      System.out.print(menu);
-      op = sc.nextInt();
-      sc.nextLine();
     } while (op == 1 || op == 2);
 
     sc.close();
@@ -28,12 +28,10 @@ public class Q40 {
 
   public static void codificar() {
     try {
-      FileInputStream fis = new FileInputStream(
-          "D:\\Users\\Brwno\\OneDrive\\Área de Trabalho\\Meus Arquivos\\brenin.txt");
+      FileInputStream fis = new FileInputStream("D:\\Users\\Brwno\\OneDrive\\Área de Trabalho\\Meus Arquivos\\brenin.txt");
       InputStreamReader isr = new InputStreamReader(fis);
       BufferedReader br = new BufferedReader(isr);
-      FileOutputStream fos = new FileOutputStream(
-          "D:\\Users\\Brwno\\OneDrive\\Área de Trabalho\\Meus Arquivos\\breninCodificado.txt");
+      FileOutputStream fos = new FileOutputStream("D:\\Users\\Brwno\\OneDrive\\Área de Trabalho\\Meus Arquivos\\breninCodificado.txt");
       OutputStreamWriter osw = new OutputStreamWriter(fos);
       BufferedWriter bw = new BufferedWriter(osw);
 
