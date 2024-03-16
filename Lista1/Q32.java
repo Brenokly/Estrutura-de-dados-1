@@ -97,6 +97,7 @@ public class Q32 {
 
   private static void exibirConteudoDoArquivoBinario() {
     try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(CAMINHO_ARQUIVO))) {
+      @SuppressWarnings("unchecked")
       List<Pessoa> pessoasLidas = (List<Pessoa>) ois.readObject();
 
       System.out.println("Lista de Pessoas Lidas do Arquivo Binário:");

@@ -32,6 +32,7 @@ public class Q35 {
     try {
       FileInputStream fis = new FileInputStream("D:\\Brwno\\OneDrive\\Área de Trabalho\\Meus Arquivos\\Materiais da Faculdade\\P4\\Data Structure 1\\Lista1\\Estrutura-de-dados-1\\Mapa.csv");
       ObjectInputStream ois = new ObjectInputStream(fis);
+      @SuppressWarnings("unchecked")
       Map<String, Integer> mapa = (Map<String, Integer>) ois.readObject();
 
       System.out.println(mapa);

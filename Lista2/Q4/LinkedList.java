@@ -1,11 +1,11 @@
-package Estruturas;
+package Lista2.Q4;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class LinkedList<E> implements MyLinkedList<E> {
+public class LinkedList<E> implements InterfaceLinkedList<E> {
   private Node head;
   private Node tail;
   private int size;
@@ -20,6 +20,12 @@ public class LinkedList<E> implements MyLinkedList<E> {
       this.next = null;
       this.prev = null;
     }
+  }
+
+  public LinkedList() {
+    head = null;
+    tail = null;
+    size = 0;
   }
 
   @Override
@@ -428,5 +434,19 @@ public class LinkedList<E> implements MyLinkedList<E> {
     size--;
     aux.prev = null;
     return aux.data;
+  }
+
+  public String toString() {
+    if (head == null) {
+      return "[]";
+    }
+
+    StringBuilder str = new StringBuilder();
+    Node aux = head;
+    while (aux != null) {
+      str.append(aux.data + ", ");
+      aux = aux.next;
+    }
+    return "[" + str + "\b\b]";
   }
 }

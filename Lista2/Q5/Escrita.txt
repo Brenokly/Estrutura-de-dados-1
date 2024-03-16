@@ -1,0 +1,7 @@
+a: 2
+vida!: 1
+Jesus: 1
+e: 2
+caminho: 1
+o: 1
+verdade: 1

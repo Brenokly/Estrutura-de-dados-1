@@ -1,8 +1,6 @@
-package Estruturas;
+package Lista2.Q3;
 
-import java.util.List;
-
-public interface MyLinkedList<E> extends List<E> {
+public interface InterfaceList<E> {
   void addFirst(E e);
   void addLast(E e);
 
@@ -11,4 +9,6 @@ public interface MyLinkedList<E> extends List<E> {
 
   E removeFirst();
   E removeLast();
+
+  boolean isEmpty();
 }
