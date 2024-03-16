@@ -1,6 +1,6 @@
 package Estruturas.Pilhas;
 
-import Estruturas.Lists.List;
+import Estruturas.Listas.List;
 
 public class PilhaCrescente <T> implements InterfacePilhaCrescente <T> { // Uma pilha usando um list invertida, onde o topo é o primeiro elemento
   private List<T> pilha;

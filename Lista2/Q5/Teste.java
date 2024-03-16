@@ -8,7 +8,7 @@ public class Teste {
     // Leitura de arquivo de texto
     List<String> linhas = new List<String>();
     try {
-      File file = new File("Lista2/Q5/Leitura.txt");
+      File file = new File("Estrutura-de-dados-1/Lista2/Q5/Leitura.txt");
       FileReader fis = new FileReader(file);
       BufferedReader buffer = new BufferedReader(fis);
 
@@ -36,7 +36,7 @@ public class Teste {
 
     try {
       // Escrever no arquivo de texto
-      BufferedWriter writer = new BufferedWriter(new FileWriter("Lista2/Q5/Escrita.txt"));
+      BufferedWriter writer = new BufferedWriter(new FileWriter("Estrutura-de-dados-1/Lista2/Q5/Escrita.txt"));
       for (Map.Entry<String, Integer> entry : map.entrySet()) {
         writer.write(entry.getKey() + ": " + entry.getValue());
         writer.newLine();
@@ -45,7 +45,7 @@ public class Teste {
       System.out.println("Arquivo de texto escrito com sucesso");
 
       // Escrever no arquivo binário
-      FileOutputStream fos = new FileOutputStream("Lista2/Q5/EscritaBinaria.bin");
+      FileOutputStream fos = new FileOutputStream("Estrutura-de-dados-1/Lista2/Q5/EscritaBinaria.bin");
       ObjectOutputStream oos = new ObjectOutputStream(fos);
       oos.writeObject(map);
       oos.close();
@@ -63,7 +63,7 @@ public class Teste {
 
     if (resposta.equals("texto")) {
       try {
-        File file = new File("Lista2/Q5/Escrita.txt");
+        File file = new File("Estrutura-de-dados-1/Lista2/Q5/Escrita.txt");
         FileReader fis = new FileReader(file);
         BufferedReader buffer = new BufferedReader(fis);
 
@@ -78,7 +78,7 @@ public class Teste {
       }
     } else if (resposta.equals("binario")) {
       try {
-        FileInputStream fis = new FileInputStream("Lista2/Q5/EscritaBinaria.bin");
+        FileInputStream fis = new FileInputStream("Estrutura-de-dados-1/Lista2/Q5/EscritaBinaria.bin");
         ObjectInputStream ois = new ObjectInputStream(fis);
         @SuppressWarnings("unchecked")
         Map<String, Integer> mapLido = (Map<String, Integer>) ois.readObject();

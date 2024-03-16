@@ -8,7 +8,7 @@ public class Teste {
     lista.add(2);
     lista.addFirst(3);
     lista.addLast(4);
-    lista.add(5);
+    lista.addLast(5);
 
     System.out.println("Elemento do início: " + lista.peekFirst());
 
@@ -20,8 +20,13 @@ public class Teste {
 
     System.out.println("Elemento do início: " + lista.peekFirst());
 
+    System.out.println("Elemento do fim: " + lista.peekLast());
+    System.out.println("Saiu o último: " + lista.removeLast());
+
     System.out.println("Saiu: " + lista.removeFirst());
-    System.out.println("Saiu: " + lista.removeLast());
+    
     System.out.println("Saiu: " + lista.removeFirst());
+
+    System.out.println("Está vázia? " + lista.isEmpty());
   }
 }

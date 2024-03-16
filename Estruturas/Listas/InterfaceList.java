@@ -1,4 +1,4 @@
-package Estruturas.Lists;
+package Estruturas.Listas;
 
 public interface InterfaceList<E> {
   void addFirst(E e);

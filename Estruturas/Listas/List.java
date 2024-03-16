@@ -1,4 +1,4 @@
-package Estruturas.Lists;
+package Estruturas.Listas;
 
 public class List<T> implements InterfaceList<T> {
 
@@ -52,11 +52,17 @@ public class List<T> implements InterfaceList<T> {
 
   @Override
   public T peekFirst() {
+    if (isEmpty()) {
+      return null;
+    }
     return head.data;
   }
 
   @Override
   public T peekLast() {
+    if (isEmpty()) {
+      return null;
+    }
     return tail.data;
   }
 
@@ -72,6 +78,17 @@ public class List<T> implements InterfaceList<T> {
 
   @Override
   public T removeLast() {
+    if (isEmpty()) {
+      return null;
+    }
+
+    if (head == tail) {
+      T data = head.data;
+      head = tail = null;
+      size = 0;
+      return data;
+    }
+
     Node aux = head;
     while (aux.next != tail) {
       aux = aux.next;

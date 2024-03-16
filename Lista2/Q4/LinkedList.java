@@ -155,6 +155,7 @@ public class LinkedList<E> implements InterfaceLinkedList<E> {
 
     for (E e : c) {
       add(e);
+      size++;
     }
 
     return true;
@@ -376,12 +377,12 @@ public class LinkedList<E> implements InterfaceLinkedList<E> {
   public void addLast(E e) {
     Node newNode = new Node(e);
     if (head == null) {
-      head = newNode;
-      tail = newNode;
+      add(e);
     } else {
       tail.next = newNode;
       newNode.prev = tail;
       tail = newNode;
+      size++;
     }
   }
 
@@ -414,7 +415,7 @@ public class LinkedList<E> implements InterfaceLinkedList<E> {
     } else {
       tail = null;
     }
-    size--;
+    --size;
     aux.next = null;
     return aux.data;
   }
