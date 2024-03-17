@@ -13,4 +13,5 @@ public interface InterfaceLinkedList<E> extends List<E> {
   E removeLast();
 
   boolean isEmpty();
+  int size();
 }

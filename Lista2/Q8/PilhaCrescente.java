@@ -1,4 +1,4 @@
-package Estruturas.Pilhas;
+package Lista2.Q8;
 
 import Estruturas.Listas.List;
 import Exceptions.PilhaVazia;

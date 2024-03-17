@@ -11,4 +11,5 @@ public interface InterfaceList<E> {
   E removeLast();
 
   boolean isEmpty();
+  int size();
 }

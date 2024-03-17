@@ -106,6 +106,11 @@ public class List<T> implements InterfaceList<T> {
     return size == 0;
   }
 
+  @Override
+  public int size() {
+    return size;
+  }
+
   // Método para exibir imprimir a pilha na ordem que foi inserida toString
   public String toString() {
     if (isEmpty()) {

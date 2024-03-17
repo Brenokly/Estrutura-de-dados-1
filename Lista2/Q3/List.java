@@ -103,4 +103,9 @@ public class List<T> implements InterfaceList<T> {
     }
     return "[" + str + "\b\b]";
   }
+
+  @Override
+  public int size() {
+    return size;
+  }
 }

@@ -1,25 +1,22 @@
-package Estruturas.Pilhas;
+package Lista2.Q6;
 
-import Estruturas.Listas.List;
 import Exceptions.PilhaVazia;
+import Lista2.Q3.List;
 
-public class PilhaCrescente <T> implements InterfacePilhaCrescente <T> { // Uma pilha usando um list invertida, onde o topo é o primeiro elemento
+public class Pilha <T> implements InterfacePilhaCrescente<T> {
   private List<T> pilha;
 
-  public PilhaCrescente() {
-    pilha = new List<T>();
+  public Pilha(){
+    this.pilha = new List<T>();
   }
 
   @Override
-  public T pop() throws RuntimeException {
-    if (isEmpty()) {
-      throw new PilhaVazia("A pilha está vázia!");
-    }
+  public T pop() {
+    T element = pilha.peekFirst();
 
-    T dado = pilha.peekFirst();
     pilha.removeFirst();
-    
-    return dado;
+
+    return element;
   }
 
   @Override
@@ -28,9 +25,9 @@ public class PilhaCrescente <T> implements InterfacePilhaCrescente <T> { // Uma 
   }
 
   @Override
-  public T peek() {
-    if (isEmpty()) {
-      return null;
+  public T peek() throws RuntimeException {
+    if (pilha.isEmpty()){
+      throw new PilhaVazia("Pilha está vázia");
     }
 
     return pilha.peekFirst();
