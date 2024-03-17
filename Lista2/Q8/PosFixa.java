@@ -23,7 +23,7 @@ public class PosFixa {
   static double avaliarPosFixa(final String posFixa) {
     PilhaCrescente<Double> operandos = new PilhaCrescente<Double>();
 
-    String padrao = "(?<=[-+*/^()])|(?=[-+*/^()])"; // Divide antes e depois de cada operador ou parêntese
+    String padrao = "(?<=[-+*/^()])|(?=[-+*/^()])|(?<![\\d.])(?=[\\d.]+)|(?<=[\\d.])(?![\\d.])";
 
     // Usando expressão regular para dividir a expressão em tokens
     String[] tokens = posFixa.split(padrao);
@@ -51,7 +51,7 @@ public class PosFixa {
     PilhaCrescente<Character> operadores = new PilhaCrescente<Character>();
     String posFixa = "";
 
-    String padrao = "(?<=[-+*/^()])|(?=[-+*/^()])"; // Divide antes e depois de cada operador ou parêntese
+    String padrao = "(?<=[-+*/^()])|(?=[-+*/^()])|(?<![\\d.])(?=[\\d.]+)|(?<=[\\d.])(?![\\d.])";
 
     // Usando expressão regular para dividir a expressão em tokens
     String[] tokens = infixa.split(padrao);
