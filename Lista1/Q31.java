@@ -9,7 +9,8 @@ public class Q31 {
     double peso;
     double altura;
     double imc;
-
+    Scanner ss = new Scanner(System.in);
+    
     private Pessoa() {
       this.cpf = "";
       this.nome = "";
@@ -22,7 +23,7 @@ public class Q31 {
 
     public void setNome(String nome) {
       if (nome != null && !nome.isEmpty())
-      this.nome = nome;
+        this.nome = nome;
     }
 
     public void setPeso(double peso) {
@@ -95,39 +96,40 @@ public class Q31 {
     }
 
     private void leitura() {
-      Scanner sc = new Scanner(System.in);
+      
       System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
       System.out.print("Digite o seu CPF: ");
-      String cpf = sc.nextLine();
+      String cpf = ss.nextLine();
       setCpf(cpf);
 
       System.out.print("Digite o seu nome: ");
-      String nome = sc.nextLine();
+      String nome = ss.nextLine();
       setNome(nome);
 
       System.out.print("Digite a sua idade: ");
-      int idade = sc.nextInt();
+      int idade = ss.nextInt();
       setIdade(idade);
 
-      sc.nextLine(); 
+      ss.nextLine();
       System.out.print("Digite o seu sexo: ");
-      String sexo = sc.nextLine();
+      String sexo = ss.nextLine();
       setSexo(sexo);
 
       System.out.print("Digite o seu peso: ");
-      double peso = sc.nextDouble();
+      double peso = ss.nextDouble();
       setPeso(peso);
 
       System.out.print("Digite a sua altura: ");
-      double altura = sc.nextDouble();
+      double altura = ss.nextDouble();
       setAltura(altura);
 
-      sc.nextLine(); 
+      ss.nextLine();
       System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-    
+
       calculaImc();
     }
   }
+
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
@@ -137,7 +139,7 @@ public class Q31 {
     Pessoa[] pessoas = new Pessoa[qtd];
 
     for (int i = 0; i < qtd; i++) {
-      pessoas[i] = new Pessoa(); 
+      pessoas[i] = new Pessoa();
       pessoas[i].leitura();
     }
 
