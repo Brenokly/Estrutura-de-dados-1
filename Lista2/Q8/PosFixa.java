@@ -21,12 +21,11 @@ public class PosFixa {
   }
 
   static double avaliarPosFixa(final String posFixa) {
-    PilhaCrescente<Double> operandos = new PilhaCrescente<Double>();
+    PilhaCrescente<Double> operandos = new PilhaCrescente<Double>(); // minha própria pilha
 
-    String padrao = "(?<=[-+*/^()])|(?=[-+*/^()])|(?<![\\d.])(?=[\\d.]+)|(?<=[\\d.])(?![\\d.])";
+    // String padrao = "(?<=[-+*/^()])|(?=[-+*/^()])|(?<![\\d.])(?=[\\d.]+)|(?<=[\\d.])(?![\\d.])"; expressão regular
 
-    // Usando expressão regular para dividir a expressão em tokens
-    String[] tokens = posFixa.split(padrao);
+    String[] tokens = posFixa.split(" ");
 
     for (String token : tokens) {
       if (ehOperando(token.charAt(0))) {
@@ -48,57 +47,48 @@ public class PosFixa {
   }
 
   static String infixParaPosFixa(final String infixa) {
-    PilhaCrescente<Character> operadores = new PilhaCrescente<Character>();
-    String posFixa = "";
+    StringBuilder posFixa = new StringBuilder();
+    PilhaCrescente<Character> operadores = new PilhaCrescente<>(); // minha própria pilha
 
-    String padrao = "(?<=[-+*/^()])|(?=[-+*/^()])|(?<![\\d.])(?=[\\d.]+)|(?<=[\\d.])(?![\\d.])";
+    StringBuilder numero = new StringBuilder(); // Para construir números com mais de um dígito
 
-    // Usando expressão regular para dividir a expressão em tokens
-    String[] tokens = infixa.split(padrao);
-
-    for (String token : tokens) {
-      if (ehOperando(token.charAt(0)) || token.equals("e")) { // "e" é constante de euler
-
-        posFixa += token + " ";
-
-      } else if (ehOperador(token.charAt(0))) {
-        // Enquanto a pilha de operadores não estiver vázia e o simbolo do topo não for
-        // um abre parêntese e a prioridade do operador no topo
-        // for maior que a prioridade do operador atual, adiciona na expressão posfixa.
-        // é uma forma de manter a prescedência.
-        // Ex: 35 + 4 * 2 -> na pilha terá + no topo, porém quando achar o *, ele tem
-        // uma prescendência maior, então entrará na expressão primeiro.
-
-        while (!operadores.isEmpty() && operadores.peek() != '('
-            && prioridade(operadores.peek().charValue()) >= prioridade(token.charAt(0))) {
-
-          posFixa += operadores.pop() + " ";
-
+    for (char token : infixa.toCharArray()) {
+      if (Character.isDigit(token)) {
+        numero.append(token); // Adiciona o caractere ao número sendo construído
+      } else {
+        if (numero.length() > 0) {
+          posFixa.append(numero.toString()).append(" ");
+          numero.setLength(0); // Reseta o StringBuilder para construir o próximo número
         }
-        operadores.push(token.charAt(0));
+        if (ehOperando(token)) {
+          posFixa.append(token).append(" ");
+        } else if (ehOperador(token)) {
 
-      } else if (token.charAt(0) == '(') {
-        // abre parêntese na pilha
+          while (!operadores.isEmpty() && prioridade(operadores.peek()) >= prioridade(token)) {
+            posFixa.append(operadores.pop()).append(" ");
+          }
 
-        operadores.push(token.charAt(0));
-
-      } else if (token.charAt(0) == ')') {
-        while (operadores.peek() != '(' && !operadores.isEmpty()) {
-          // Enquanto o while não achar o abre parentese, adiciona tudo a expressão, ou
-          // seja, tudo que está entre o abre e fecha parentese.
-
-          posFixa += operadores.pop() + " ";
-
+          operadores.push(token);
+        } else if (token == '(') {
+          operadores.push(token);
+        } else if (token == ')') {
+          while (!operadores.isEmpty() && operadores.peek() != '(') {
+            posFixa.append(operadores.pop()).append(" ");
+          }
+          operadores.pop(); // Remover o '(' da pilha
         }
-        operadores.pop();
       }
     }
 
-    while (!operadores.isEmpty()) {
-      posFixa += operadores.pop() + " ";
+    if (numero.length() > 0) {
+      posFixa.append(numero.toString()).append(" ");
     }
 
-    return posFixa;
+    while (!operadores.isEmpty()) {
+      posFixa.append(operadores.pop()).append(" ");
+    }
+
+    return posFixa.toString();
   }
 
   static public int prioridade(char op) {
