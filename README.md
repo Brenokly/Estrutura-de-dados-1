@@ -1,6 +1,5 @@
 Aqui está o README atualizado com uma seção sobre como usar o repositório, incluindo uma formatação atraente e emojis:
 
-```markdown
 # 📚 Estrutura de Dados 1
 
 ## Disciplina: Estrutura de Dados 1 📚
