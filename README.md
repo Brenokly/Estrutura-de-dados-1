@@ -24,15 +24,11 @@ Bem-vindo ao repositório **Estrutura de Dados 1**! Este espaço contém as impl
 - ✅ **Manipulação de arquivos de texto e binários**
 - ✅ **Estruturação do código-fonte em vários arquivos**
 
-**Carga Horária:** 20 horas (10 teóricas, 10 práticas)
-
 ### 🗂️ Unidade II: Estruturas Sequenciais
 - 📦 **Pilhas**
 - 📦 **Filas**
 - 📦 **Listas encadeadas**
 - 📦 **Aplicações destas estruturas**
-
-**Carga Horária:** 20 horas (10 teóricas, 10 práticas)
 
 ### 🔍 Unidade III: Algoritmos de Busca e Ordenação
 - 📊 **Introdução à Complexidade de Algoritmos**
