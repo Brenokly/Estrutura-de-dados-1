@@ -5,7 +5,7 @@
 ### Universidade: Ufersa - Universidade Federal Rural do Semi-Árido 🌱
 ### Ano: 2023 📅
 
-Bem-vindo ao repositório **Estrutura de Dados 1**! Este espaço contém as implementações e exercícios realizados durante a disciplina de Estrutura de Dados 1, do curso de Ciência da Computação, no ano letivo de **2019.2**. O objetivo da disciplina é aprofundar o conhecimento sobre programação e estruturas de dados, apresentando métodos de organização de dados e algoritmos de manipulação.
+Bem-vindo ao repositório **Estrutura de Dados 1**! Este espaço contém as implementações e exercícios realizados durante a disciplina de Estrutura de Dados 1, do curso de Ciência da Computação, no ano letivo de **2023.2**. O objetivo da disciplina é aprofundar o conhecimento sobre programação e estruturas de dados, apresentando métodos de organização de dados e algoritmos de manipulação.
 
 ## 🎯 Objetivos da Disciplina
 
