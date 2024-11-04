@@ -1,3 +1,6 @@
+Aqui está o README atualizado com uma seção sobre como usar o repositório, incluindo uma formatação atraente e emojis:
+
+```markdown
 # 📚 Estrutura de Dados 1
 
 ## Disciplina: Estrutura de Dados 1 📚
@@ -41,8 +44,6 @@ Bem-vindo ao repositório **Estrutura de Dados 1**! Este espaço contém as impl
 - 📊 **Algoritmos de ordenação**
 - 📊 **Aplicações destes algoritmos**
 
-**Carga Horária:** 20 horas (10 teóricas, 10 práticas)
-
 ## 📂 Estruturas do Repositório
 
 O repositório está organizado em quatro pacotes:
@@ -52,12 +53,22 @@ O repositório está organizado em quatro pacotes:
 - **Lista1:** A primeira lista de exercícios fornecida pelo professor, com todas as respostas implementadas. ✔️
 - **Lista2:** A segunda lista de exercícios fornecida pelo professor, com todas as respostas implementadas. ✔️
 
-## 🛠️ Metodologia
+## ⚙️ Como Usar o Repositório
 
-- Aulas expositivas 📖
-- Práticas de laboratório 🔬
-- Resolução de problemas 💡
-- Desenvolvimento de projetos com aplicabilidade 🚀
+Para usar este repositório, siga as instruções abaixo:
+
+1. **Clone o repositório:**
+   ```bash
+   https://github.com/Brenokly/Estrutura-de-dados-1.git
+   ```
+2. **Navegue até o diretório do projeto:**
+   ```bash
+   cd Estrutura-de-dados-1
+   ```
+3. **Escolha qual parte deseja explorar.** O projeto é organizado em pacotes conforme mencionado anteriormente. Utilize sua IDE preferida para abrir os arquivos e testar as implementações:
+   - Para as estruturas, explore o pacote **Estruturas**.
+   - Para tratar exceções, veja o pacote **Exceptions**.
+   - Para exercícios, verifique os pacotes **Lista1** e **Lista2**.
 
 ## 📚 Referências Bibliográficas
 
@@ -76,3 +87,4 @@ O repositório está organizado em quatro pacotes:
 ---
 
 Sinta-se à vontade para explorar e contribuir! Vamos aprender juntos! 🚀
+```
